@@ -1,26 +1,26 @@
-*kanagawa-paper.nvim.txt*       For NVIM v0.8.0      Last change: 2024 June 19
+*kanagawa-again.nvim.txt*       For NVIM v0.8.0      Last change: 2024 June 19
 
 ==============================================================================
-Table of Contents                      *kanagawa-paper.nvim-table-of-contents*
+Table of Contents                      *kanagawa-again.nvim-table-of-contents*
 
-1. kanagawa-paper.nvim               |kanagawa-paper.nvim-kanagawa-paper.nvim|
-  - Motivation                                |kanagawa-paper.nvim-motivation|
-  - Requirements                            |kanagawa-paper.nvim-requirements|
-  - Installation                            |kanagawa-paper.nvim-installation|
-  - Usage                                          |kanagawa-paper.nvim-usage|
-  - Configuration                          |kanagawa-paper.nvim-configuration|
-  - Customizing Colors                |kanagawa-paper.nvim-customizing-colors|
-  - Extras                                        |kanagawa-paper.nvim-extras|
-  - Acknowledgements                    |kanagawa-paper.nvim-acknowledgements|
-2. Links                                           |kanagawa-paper.nvim-links|
+1. kanagawa-again.nvim               |kanagawa-again.nvim-kanagawa-again.nvim|
+  - Motivation                                |kanagawa-again.nvim-motivation|
+  - Requirements                            |kanagawa-again.nvim-requirements|
+  - Installation                            |kanagawa-again.nvim-installation|
+  - Usage                                          |kanagawa-again.nvim-usage|
+  - Configuration                          |kanagawa-again.nvim-configuration|
+  - Customizing Colors                |kanagawa-again.nvim-customizing-colors|
+  - Extras                                        |kanagawa-again.nvim-extras|
+  - Acknowledgements                    |kanagawa-again.nvim-acknowledgements|
+2. Links                                           |kanagawa-again.nvim-links|
 
 ==============================================================================
-1. kanagawa-paper.nvim               *kanagawa-paper.nvim-kanagawa-paper.nvim*
+1. kanagawa-again.nvim               *kanagawa-again.nvim-kanagawa-again.nvim*
 
 Remixed Kanagawa colourscheme with muted colors. For Neovim.
 
 
-MOTIVATION                                    *kanagawa-paper.nvim-motivation*
+MOTIVATION                                    *kanagawa-again.nvim-motivation*
 
 I love the original kanagawa.nvim <https://github.com/rebelot/kanagawa.nvim>
 colourscheme, but I found some of the colours of the dark themes a bit too
@@ -28,27 +28,27 @@ bright and distracting. What I wanted was a more muted theme overall, combining
 the less saturated syntax colours of the dragon theme, while keeping the blue
 background of the wave theme.
 
-kanagawa-paper combines both the dragon and wave themes, with a few additions
+kanagawa-again combines both the dragon and wave themes, with a few additions
 and tweaks to work better with certain plugins.
 
 I have also ported the colourscheme to VSCode, which you can find here:
-kanagawa-paper.vscode <https://github.com/sho-87/kanagawa-paper.vscode>
+kanagawa-again.vscode <https://github.com/sho-87/kanagawa-again.vscode>
 
 
-REQUIREMENTS                                *kanagawa-paper.nvim-requirements*
+REQUIREMENTS                                *kanagawa-again.nvim-requirements*
 
 - Neovim <https://github.com/neovim/neovim> >=
     0.8.0 <https://github.com/neovim/neovim/releases/tag/v0.8.0>
 
 
-INSTALLATION                                *kanagawa-paper.nvim-installation*
+INSTALLATION                                *kanagawa-again.nvim-installation*
 
 Install the theme with your preferred package manager, such as lazy.nvim
 <https://github.com/folke/lazy.nvim>
 
 >lua
     {
-      "sho-87/kanagawa-paper.nvim",
+      "sho-87/kanagawa-again.nvim",
       lazy = false,
       priority = 1000,
       opts = {},
@@ -56,20 +56,20 @@ Install the theme with your preferred package manager, such as lazy.nvim
 <
 
 
-USAGE                                              *kanagawa-paper.nvim-usage*
+USAGE                                              *kanagawa-again.nvim-usage*
 
 
 VIM SCRIPT ~
 
 >vim
-    colorscheme kanagawa-paper
+    colorscheme kanagawa-again
 <
 
 
 LUA ~
 
 >lua
-    vim.cmd("colorscheme kanagawa-paper")
+    vim.cmd("colorscheme kanagawa-again")
 <
 
 
@@ -79,24 +79,24 @@ EXTERNAL PLUGINS ~
 LUALINE
 
 >lua
-    local kanagawa_paper = require("lualine.themes.kanagawa-paper")
+    local kanagawa_again = require("lualine.themes.kanagawa-again")
     
     require('lualine').setup {
       options = {
-        theme = kanagawa_paper
+        theme = kanagawa_again
         -- ... your lualine config
       }
     }
 <
 
 
-CONFIGURATION                              *kanagawa-paper.nvim-configuration*
+CONFIGURATION                              *kanagawa-again.nvim-configuration*
 
 
   Set the configuration **BEFORE** loading the color scheme with `colorscheme
-  kanagawa-paper`.
+  kanagawa-again`.
 >lua
-    require('kanagawa-paper').setup({
+    require('kanagawa-again').setup({
       undercurl = true,
       transparent = false,
       gutter = false,
@@ -114,14 +114,14 @@ CONFIGURATION                              *kanagawa-paper.nvim-configuration*
     })
     
     -- setup must be called before loading
-    vim.cmd("colorscheme kanagawa-paper")
+    vim.cmd("colorscheme kanagawa-again")
 <
 
 The code that defines the default configuration can be found here
-<lua/kanagawa-paper/config.lua>
+<lua/kanagawa-again/config.lua>
 
 
-CUSTOMIZING COLORS                    *kanagawa-paper.nvim-customizing-colors*
+CUSTOMIZING COLORS                    *kanagawa-again.nvim-customizing-colors*
 
 There are two kinds of colors: `PaletteColors` and `ThemeColors`.
 
@@ -134,11 +134,11 @@ the `PaletteColors` to specific `ThemeColors` and the same palette color may be
 assigned to multiple theme colors.
 
 You can change _both_ theme or palette colors using `config.colors`. All the
-palette color names can be found here <lua/kanagawa-paper/colors.lua>, while
-their usage by each theme can be found here <lua/kanagawa-paper/themes.lua>.
+palette color names can be found here <lua/kanagawa-again/colors.lua>, while
+their usage by each theme can be found here <lua/kanagawa-again/themes.lua>.
 
 >lua
-    require('kanagawa-paper').setup({
+    require('kanagawa-again').setup({
         colors = {
             palette = {
                 -- change all usages of these color names
@@ -161,7 +161,7 @@ You can also conveniently add/modify `hlgroups` using the `config.overrides`
 option. Supported keywords are the same for |nvim_set_hl| `{val}` parameter.
 
 >lua
-    require('kanagawa-paper').setup({
+    require('kanagawa-again').setup({
         overrides = function(colors)
             return {
                 -- Assign a static color to strings
@@ -178,7 +178,7 @@ EXTRACTING COLORS ~
 
 >lua
     -- Get the colors for the current theme
-    local colors = require("kanagawa-paper.colors").setup()
+    local colors = require("kanagawa-again.colors").setup()
     local palette_colors = colors.palette
     local theme_colors = colors.theme
 <
@@ -238,13 +238,13 @@ More uniform colors for the popup menu.
 <
 
 
-EXTRAS                                            *kanagawa-paper.nvim-extras*
+EXTRAS                                            *kanagawa-again.nvim-extras*
 
-- alacritty <extras/alacritty_kanagawa_paper.yml>
-- fish <extras/kanagawa_paper.fish>
-- kitty <extras/kitty_kanagawa_paper.conf>
+- alacritty <extras/alacritty_kanagawa_again.yml>
+- fish <extras/kanagawa_again.fish>
+- kitty <extras/kitty_kanagawa_again.conf>
 - pywal <extras/pywal-theme.json>
-- vscode <https://github.com/sho-87/kanagawa-paper.vscode> (official port)
+- vscode <https://github.com/sho-87/kanagawa-again.vscode> (official port)
 - vscode terminal <extras/vscode_terminal.json> (guide: Visual Studio Code Theme Color <https://code.visualstudio.com/api/references/theme-color>)
 - wezterm <extras/wezterm.lua> (guide: Defining a Color Scheme in a separate file <https://wezfurlong.org/wezterm/config/appearance.html#defining-a-color-scheme-in-a-separate-file>)
 - windows terminal <extras/windows_terminal.json> (guide: Color schemes in Windows Terminal <https://learn.microsoft.com/en-us/windows/terminal/customize-settings/color-schemes>)
@@ -252,15 +252,15 @@ EXTRAS                                            *kanagawa-paper.nvim-extras*
 PRs are welcome if you want to add an extra for a specific application.
 
 
-ACKNOWLEDGEMENTS                        *kanagawa-paper.nvim-acknowledgements*
+ACKNOWLEDGEMENTS                        *kanagawa-again.nvim-acknowledgements*
 
 - Kanagawa <https://github.com/rebelot/kanagawa.nvim>
 - Tokyo Night <https://github.com/folke/tokyonight.nvim>
 
 ==============================================================================
-2. Links                                           *kanagawa-paper.nvim-links*
+2. Links                                           *kanagawa-again.nvim-links*
 
-1. *screenshot*: https://github.com/sho-87/kanagawa-paper.nvim/assets/5199715/cf75d935-d8b4-430c-a1d8-04f453151924
+1. *screenshot*: https://github.com/sho-87/kanagawa-again.nvim/assets/5199715/cf75d935-d8b4-430c-a1d8-04f453151924
 
 Generated by panvimdoc <https://github.com/kdheepak/panvimdoc>
 

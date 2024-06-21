@@ -96,7 +96,7 @@
 ---@param palette PaletteColors
 ---@return ThemeColors
 return function(palette)
-	local gutter_bg = require("kanagawa-paper.config").options.gutter and palette.sumiInk4 or "none"
+	local gutter_bg = require("kanagawa-again.config").options.gutter and palette.sumiInk4 or "none"
 
 	return {
 		modes = {
