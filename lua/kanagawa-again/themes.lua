@@ -68,6 +68,8 @@
 ---@field bg_search ColorSpec
 ---@field bg_visual ColorSpec
 ---@field bg_tabline ColorSpec
+---@field color_column ColorSpec SpecialKey
+---@field cursor_line_number ColorSpec SpecialKey
 ---@field special ColorSpec SpecialKey
 ---@field nontext ColorSpec LineNr, NonText
 ---@field whitespace ColorSpec Whitespace
@@ -141,7 +143,9 @@ return function(palette)
             bg_search = palette.springViolet1,
             bg_visual = palette.sumiInk5,
             bg_tabline = palette.sumiInk0,
+
             color_column = palette.sumiInk2,
+            cursor_line_number = palette.katanaGray,
 
             special = palette.springViolet1,
             nontext = palette.sumiInk6,
@@ -150,6 +154,7 @@ return function(palette)
             win_separator = palette.dragonViolet,
             indent = palette.sumiInk5,
             picker = palette.dragonRed,
+
             pmenu = {
                 fg = palette.fujiWhite,
                 fg_sel = "none", -- This is important to make highlights pass-through
@@ -203,10 +208,10 @@ return function(palette)
             changed = palette.autumnYellow,
         },
         diff = {
-            add = palette.autumnGreen,
-            delete = palette.autumnRed,
-            change = palette.autumnYellow,
-            text = palette.dragonBlue,
+            add = palette.winterGreen,
+            delete = palette.winterRed,
+            change = palette.winterYellow,
+            text = palette.winterBlue,
         },
         diag = {
             error = palette.samuraiRed,
