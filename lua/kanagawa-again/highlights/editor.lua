@@ -5,6 +5,7 @@ local M = {}
 function M.setup(colors, opts)
     opts = opts or require("kanagawa-again.config").options
     local theme = colors.theme
+    local palette = colors.palette
 
     return {
         None = { bg = "NONE", fg = theme.ui.bg },

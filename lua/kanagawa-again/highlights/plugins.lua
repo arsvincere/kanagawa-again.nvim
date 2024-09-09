@@ -23,6 +23,11 @@ function M.setup(colors, opts)
         GitGutterChangeLineNr = { link = "GitSignsChange" },
         GitGutterDeleteLineNr = { link = "GitSignsDelete" },
 
+        -- Illuminate
+        IlluminatedWordText = { bg = theme.ui.bg_p1 },
+        IlluminatedWordRead = { bg = theme.ui.bg_p1 },
+        IlluminatedWordWrite = { bg = theme.ui.bg_p1 },
+
         -- Neogit
         NeogitDiffContextHighlight = { bg = theme.diff.change },
         NeogitHunkHeader = { fg = theme.syn.fun },
